@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calendar } from "@/components/ui/calendar"
@@ -123,7 +125,11 @@ export default function CalendarioAcademico() {
   }
 
   // Función para renderizar el día en el calendario
-  const renderDay = (day: Date) => {
+  const renderDay = (day: Date | undefined) => {
+    if (!day || !(day instanceof Date) || isNaN(day.getTime())) {
+      return null
+    }
+
     const dayEvents = events.filter(
       (event) =>
         event.date.getDate() === day.getDate() &&
@@ -163,7 +169,9 @@ export default function CalendarioAcademico() {
             onSelect={setSelectedDate}
             className="rounded-md border"
             components={{
-              Day: ({ day, ...props }) => <button {...props}>{renderDay(day)}</button>,
+              Day: ({ day, ...props }: { day: Date } & React.HTMLAttributes<HTMLButtonElement>) => (
+                <button {...props}>{renderDay(day)}</button>
+              ),
             }}
           />
 

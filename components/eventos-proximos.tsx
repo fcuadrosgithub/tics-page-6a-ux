@@ -31,7 +31,7 @@ export default function EventosProximos() {
       hora: "10:00 - 12:00",
       lugar: "Auditorio Principal",
       tipo: "conferencia",
-      imagen: "/placeholder.svg?height=200&width=400",
+      imagen: "https://images.theconversation.com/files/639088/original/file-20241217-15-leuwp4.jpg?ixlib=rb-4.1.0&rect=0%2C862%2C5829%2C2910&q=45&auto=format&w=1356&h=668&fit=crop",
       enlace: "https://eventos.itsoeh.edu.mx/ia-industria",
     },
     {
@@ -42,7 +42,7 @@ export default function EventosProximos() {
       hora: "16:00 - 19:00",
       lugar: "Laboratorio de Cómputo 3",
       tipo: "taller",
-      imagen: "/placeholder.svg?height=200&width=400",
+      imagen: "https://codigoencasa.com/content/images/2022/04/Captura-de-Pantalla-2022-04-26-a-las-9.42.16.png",
       enlace: "https://eventos.itsoeh.edu.mx/taller-react",
     },
     {
@@ -53,7 +53,7 @@ export default function EventosProximos() {
       hora: "09:00 - 18:00",
       lugar: "Centro de Cómputo",
       tipo: "academico",
-      imagen: "/placeholder.svg?height=200&width=400",
+      imagen: "https://www.famaf.unc.edu.ar/media/images/code-1076536_1920.2e16d0ba.fill-1255x526.jpg",
       enlace: "https://eventos.itsoeh.edu.mx/torneo-programacion",
     },
     {
@@ -64,7 +64,7 @@ export default function EventosProximos() {
       hora: "12:00 - 20:00",
       lugar: "Plaza Central",
       tipo: "cultural",
-      imagen: "/placeholder.svg?height=200&width=400",
+      imagen: "https://content.nationalgeographic.com.es/medio/2024/03/19/primavera_e056ce17_240319213843_1200x630.jpg",
     },
   ]
 

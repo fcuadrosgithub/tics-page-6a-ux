@@ -32,7 +32,7 @@ export default function BuscadorAsignaturas() {
       semestre: 1,
       creditos: 5,
       tipo: "Ciencias Básicas",
-      imagen: "/placeholder.svg?height=100&width=100",
+      imagen: "https://cdn-icons-png.flaticon.com/512/1603/1603002.png",
       pdf: "/asignaturas/calculo-diferencial.pdf",
     },
     {

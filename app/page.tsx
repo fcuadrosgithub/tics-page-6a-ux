@@ -56,7 +56,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="https://static.educaweb.com/img/news/20220616_informatica_tic.jpg"
                 width={600}
                 height={400}
                 alt="Estudiantes de TIC"
