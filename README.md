@@ -56,9 +56,12 @@ Sigue estos pasos para instalar y ejecutar el proyecto localmente:
 1. **Descarga el repositorio** o el archivo del proyecto.
 
 2. **Instala las dependencias**
-   > utilizando: 
-  - pnpm i                     Despues ejecuta con el siguiente comando:
-  -  pnpm dev      y despues accede al link localhost:3000
+   Utilizando:
+   '''bash
+   pnpm i
+  - Despues ejecuta con el siguiente comando:
+  -  pnpm dev
+  -  Y despues accede al link localhost:3000
 
 
 ### Requisitos Previos
@@ -69,3 +72,5 @@ Sigue estos pasos para instalar y ejecutar el proyecto localmente:
   ## ✨ ESTUDIANTES
 
 ![Página Estudiantes](Estudiantes.png)
+
+  ## ✨ Link de Vercel
