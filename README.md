@@ -58,8 +58,7 @@ Sigue estos pasos para instalar y ejecutar el proyecto localmente:
 2. **Instala las dependencias** utilizando 
    - pnpm i
    Despues ejecuta con el siguiente comando
-  -  pnpm dev
-  Despues accede al link localhost:3000
+  -  pnpm dev y despues accede al link localhost:3000
 
 
 ### Requisitos Previos
