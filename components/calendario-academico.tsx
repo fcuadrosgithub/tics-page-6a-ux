@@ -1,12 +1,11 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calendar } from "@/components/ui/calendar"
 import { Badge } from "@/components/ui/badge"
 import { Info } from "lucide-react"
+import Link from "next/link"
 
 type EventType =
   | "inicio"
@@ -163,58 +162,183 @@ export default function CalendarioAcademico() {
           <CardDescription>Fechas importantes para el año académico</CardDescription>
         </CardHeader>
         <CardContent>
-          <Calendar
-            mode="single"
-            selected={selectedDate}
-            onSelect={setSelectedDate}
-            className="rounded-md border"
-            components={{
-              Day: ({ day, ...props }: { day: Date } & React.HTMLAttributes<HTMLButtonElement>) => (
-                <button {...props}>{renderDay(day)}</button>
-              ),
-            }}
-          />
+          <div className="w-full">
+            <Calendar
+              mode="single"
+              selected={selectedDate}
+              onSelect={setSelectedDate}
+              className="rounded-md border w-full"
+              classNames={{
+                months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
+                month: "space-y-4 w-full",
+                caption: "flex justify-center pt-1 relative items-center",
+                caption_label: "text-lg font-medium",
+                nav: "space-x-1 flex items-center",
+                nav_button: "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
+                nav_button_previous: "absolute left-1",
+                nav_button_next: "absolute right-1",
+                table: "w-full border-collapse space-y-1",
+                head_row: "flex w-full",
+                head_cell: "text-muted-foreground rounded-md w-full font-normal text-[0.8rem] flex-1 text-center py-2",
+                row: "flex w-full mt-2",
+                cell: "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 flex-1 h-12",
+                day: "h-12 w-full p-0 font-normal aria-selected:opacity-100 hover:opacity-80 focus:opacity-80 relative flex items-center justify-center rounded-md transition-all",
+                day_selected: "ring-2 ring-primary ring-offset-2 font-bold",
+                day_today: "ring-2 ring-accent font-semibold",
+                day_outside: "text-muted-foreground opacity-50",
+                day_disabled: "text-muted-foreground opacity-50",
+                day_range_middle: "aria-selected:bg-accent aria-selected:text-accent-foreground",
+                day_hidden: "invisible",
+              }}
+              components={{
+                Day: ({ date, ...props }) => {
+                  if (!date) return null
 
-          <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-2">
-            <div className="flex items-center">
-              <div className="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
-              <span className="text-xs">Inicio</span>
+                  const dayEvents = events.filter(
+                    (event) =>
+                      event.date.getDate() === date.getDate() &&
+                      event.date.getMonth() === date.getMonth() &&
+                      event.date.getFullYear() === date.getFullYear(),
+                  )
+
+                  // Determinar el color de fondo basado en el evento más importante
+                  let backgroundColor = ""
+                  let textColor = "text-foreground"
+
+                  if (dayEvents.length > 0) {
+                    const primaryEvent = dayEvents[0] // Tomar el primer evento como principal
+                    switch (primaryEvent.type) {
+                      case "inicio":
+                        backgroundColor = "bg-green-500"
+                        textColor = "text-white"
+                        break
+                      case "vacaciones":
+                        backgroundColor = "bg-blue-500"
+                        textColor = "text-white"
+                        break
+                      case "parcial":
+                        backgroundColor = "bg-orange-500"
+                        textColor = "text-white"
+                        break
+                      case "final":
+                        backgroundColor = "bg-red-500"
+                        textColor = "text-white"
+                        break
+                      case "entrega":
+                        backgroundColor = "bg-purple-500"
+                        textColor = "text-white"
+                        break
+                      case "inscripcion":
+                        backgroundColor = "bg-indigo-500"
+                        textColor = "text-white"
+                        break
+                      case "ceremonia":
+                        backgroundColor = "bg-pink-500"
+                        textColor = "text-white"
+                        break
+                      case "conferencia":
+                        backgroundColor = "bg-yellow-500"
+                        textColor = "text-black"
+                        break
+                      case "taller":
+                        backgroundColor = "bg-teal-500"
+                        textColor = "text-white"
+                        break
+                      case "otro":
+                        backgroundColor = "bg-gray-500"
+                        textColor = "text-white"
+                        break
+                    }
+                  }
+
+                  return (
+                    <button
+                      {...props}
+                      className={`${props.className} ${backgroundColor} ${textColor}`}
+                      title={dayEvents.length > 0 ? dayEvents.map((e) => e.title).join(", ") : ""}
+                    >
+                      <div className="relative w-full h-full flex flex-col items-center justify-center">
+                        <span className="text-sm font-medium">{date.getDate()}</span>
+                        {dayEvents.length > 1 && (
+                          <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex gap-0.5">
+                            {dayEvents.slice(1, 4).map((event, index) => (
+                              <div
+                                key={index}
+                                className={`w-1.5 h-1.5 rounded-full ${getBadgeColor(event.type)} ring-1 ring-white`}
+                                title={event.title}
+                              />
+                            ))}
+                            {dayEvents.length > 4 && (
+                              <div
+                                className="w-1.5 h-1.5 rounded-full bg-white ring-1 ring-gray-400"
+                                title={`+${dayEvents.length - 4} más`}
+                              />
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </button>
+                  )
+                },
+              }}
+            />
+
+            <div className="mt-6 flex justify-center">
+              <Link href="/calendario.png" target="_blank" rel="noopener noreferrer">
+                <button
+                  className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Mostrar calendario Detallado
+                </button>
+              </Link>
             </div>
-            <div className="flex items-center">
-              <div className="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
-              <span className="text-xs">Vacaciones</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-3 h-3 rounded-full bg-orange-500 mr-2"></div>
-              <span className="text-xs">Parcial</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-              <span className="text-xs">Final</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
-              <span className="text-xs">Entrega</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-3 h-3 rounded-full bg-indigo-500 mr-2"></div>
-              <span className="text-xs">Inscripción</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-3 h-3 rounded-full bg-pink-500 mr-2"></div>
-              <span className="text-xs">Ceremonia</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
-              <span className="text-xs">Conferencia</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-3 h-3 rounded-full bg-teal-500 mr-2"></div>
-              <span className="text-xs">Taller</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-3 h-3 rounded-full bg-gray-500 mr-2"></div>
-              <span className="text-xs">Otro</span>
+
+            <div className="mt-8 p-4 bg-muted/30 rounded-lg">
+              <h4 className="font-semibold mb-4 text-center">Leyenda de Eventos</h4>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 rounded-full bg-green-500"></div>
+                  <span className="text-sm font-medium">Inicio</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 rounded-full bg-blue-500"></div>
+                  <span className="text-sm font-medium">Vacaciones</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 rounded-full bg-orange-500"></div>
+                  <span className="text-sm font-medium">Parcial</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 rounded-full bg-red-500"></div>
+                  <span className="text-sm font-medium">Final</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 rounded-full bg-purple-500"></div>
+                  <span className="text-sm font-medium">Entrega</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 rounded-full bg-indigo-500"></div>
+                  <span className="text-sm font-medium">Inscripción</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 rounded-full bg-pink-500"></div>
+                  <span className="text-sm font-medium">Ceremonia</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 rounded-full bg-yellow-500"></div>
+                  <span className="text-sm font-medium">Conferencia</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 rounded-full bg-teal-500"></div>
+                  <span className="text-sm font-medium">Taller</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 rounded-full bg-gray-500"></div>
+                  <span className="text-sm font-medium">Otro</span>
+                </div>
+              </div>
             </div>
           </div>
         </CardContent>

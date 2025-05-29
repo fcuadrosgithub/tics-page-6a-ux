@@ -24,15 +24,15 @@ export default function EventosProximos() {
   const eventos: Evento[] = [
     {
       id: "EVT001",
-      titulo: "Conferencia: Inteligencia Artificial en la Industria",
+      titulo: "Conferencias de: Inteligencia Artificial en la Industria",
       descripcion:
-        "Conferencia impartida por expertos de Google sobre las aplicaciones de la IA en la industria actual.",
-      fecha: "15 de mayo, 2025",
-      hora: "10:00 - 12:00",
+        "Conferencias impartidas por expertos sobre las aplicaciones de la IA en la industria actual.",
+      fecha: "Distintas fechas",
+      hora: "Recurente",
       lugar: "Auditorio Principal",
       tipo: "conferencia",
       imagen: "https://images.theconversation.com/files/639088/original/file-20241217-15-leuwp4.jpg?ixlib=rb-4.1.0&rect=0%2C862%2C5829%2C2910&q=45&auto=format&w=1356&h=668&fit=crop",
-      enlace: "https://eventos.itsoeh.edu.mx/ia-industria",
+      enlace: "https://unite.ai/es/conferencias/",
     },
     {
       id: "EVT002",
@@ -43,7 +43,7 @@ export default function EventosProximos() {
       lugar: "Laboratorio de Cómputo 3",
       tipo: "taller",
       imagen: "https://codigoencasa.com/content/images/2022/04/Captura-de-Pantalla-2022-04-26-a-las-9.42.16.png",
-      enlace: "https://eventos.itsoeh.edu.mx/taller-react",
+      enlace: "https://openwebinars.net/rutas/desarrollador-frontend-react/",
     },
     {
       id: "EVT003",
@@ -54,7 +54,7 @@ export default function EventosProximos() {
       lugar: "Centro de Cómputo",
       tipo: "academico",
       imagen: "https://www.famaf.unc.edu.ar/media/images/code-1076536_1920.2e16d0ba.fill-1255x526.jpg",
-      enlace: "https://eventos.itsoeh.edu.mx/torneo-programacion",
+      enlace: "https://www.scielo.org.ar/scielo.php?script=sci_arttext&pid=S1850-99592020000300007",
     },
     {
       id: "EVT004",
@@ -65,6 +65,7 @@ export default function EventosProximos() {
       lugar: "Plaza Central",
       tipo: "cultural",
       imagen: "https://content.nationalgeographic.com.es/medio/2024/03/19/primavera_e056ce17_240319213843_1200x630.jpg",
+      enlace:"https://elinformativoonline.com/2025/02/07/tradicion-fiesta-y-diversion-en-el-carnaval-muxquiahuala-2025/",
     },
   ]
 

@@ -45,7 +45,7 @@ export default function EstudiantesPage() {
                 </p>
               </CardContent>
               <CardFooter>
-                <Link href="https://reinscripcion.itsoeh.edu.mx" target="_blank" rel="noopener noreferrer">
+                <Link href="http://conect.itsoeh.edu.mx/mix_21_alu/" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full">
                     Iniciar proceso <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
@@ -67,7 +67,7 @@ export default function EstudiantesPage() {
                 </p>
               </CardContent>
               <CardFooter>
-                <Link href="https://segundas.itsoeh.edu.mx" target="_blank" rel="noopener noreferrer">
+                <Link href="http://conect.itsoeh.edu.mx/mix_21_alu/" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full">
                     Solicitar <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
@@ -89,7 +89,7 @@ export default function EstudiantesPage() {
                 </p>
               </CardContent>
               <CardFooter>
-                <Link href="https://evaluacion.itsoeh.edu.mx" target="_blank" rel="noopener noreferrer">
+                <Link href="http://conect.itsoeh.edu.mx/mix_21_alu/" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full">
                     Evaluar <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
@@ -111,7 +111,7 @@ export default function EstudiantesPage() {
                 </p>
               </CardContent>
               <CardFooter>
-                <Link href="https://carga.itsoeh.edu.mx" target="_blank" rel="noopener noreferrer">
+                <Link href="http://conect.itsoeh.edu.mx/mix_21_alu/" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full">
                     Cargar materias <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
@@ -133,9 +133,9 @@ export default function EstudiantesPage() {
                 </p>
               </CardContent>
               <CardFooter>
-                <Link href="/reticula.pdf" target="_blank" rel="noopener noreferrer">
+                <Link href="/reticula.png" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full">
-                    Ver PDF <ExternalLink className="ml-2 h-4 w-4" />
+                    Ver Reticula <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </CardFooter>
@@ -155,7 +155,7 @@ export default function EstudiantesPage() {
                 </p>
               </CardContent>
               <CardFooter>
-                <Link href="https://cardex.itsoeh.edu.mx" target="_blank" rel="noopener noreferrer">
+                <Link href="http://conect.itsoeh.edu.mx/mix_21_alu/" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full">
                     Ver cardex <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
@@ -196,10 +196,10 @@ export default function EstudiantesPage() {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Link href="https://servicio.itsoeh.edu.mx" target="_blank" rel="noopener noreferrer">
+                <Link href="https://www.itsoeh.edu.mx/front/servicio.html" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline">Servicio Social</Button>
                 </Link>
-                <Link href="https://residencias.itsoeh.edu.mx" target="_blank" rel="noopener noreferrer">
+                <Link href="https://www.itsoeh.edu.mx/front/residencia.html" target="_blank" rel="noopener noreferrer">
                   <Button>Residencias</Button>
                 </Link>
               </CardFooter>
@@ -245,9 +245,7 @@ export default function EstudiantesPage() {
               </CardContent>
               <CardFooter>
                 <Link href="https://bolsatrabajo.itsoeh.edu.mx" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full">
-                    Ver todas las ofertas <ExternalLink className="ml-2 h-4 w-4" />
-                  </Button>
+                 
                 </Link>
               </CardFooter>
             </Card>

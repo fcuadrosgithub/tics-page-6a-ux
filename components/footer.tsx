@@ -12,15 +12,15 @@ export default function Footer() {
               Instituto Tecnológico Superior del Occidente del Estado de Hidalgo
             </p>
             <div className="flex space-x-3">
-              <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.facebook.com/profile.php?id=100069473374138&mibextid=JRoKGi" target="_blank" rel="noopener noreferrer">
                 <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary" />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://x.com/ITSOEHmx?t=ObySbxvldvPAcA4fhTLLmw&s=08" target="_blank" rel="noopener noreferrer">
                 <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.instagram.com/itsoeh_oficial?igsh=YnoyNWR4djZ6bWQx" target="_blank" rel="noopener noreferrer">
                 <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary" />
                 <span className="sr-only">Instagram</span>
               </Link>
@@ -60,11 +60,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 h-5 w-5 text-muted-foreground" />
-                <span className="text-muted-foreground">(+52) 738 123 4567</span>
+                <span className="text-muted-foreground">(+52) 738 735 4000</span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2 h-5 w-5 text-muted-foreground" />
-                <span className="text-muted-foreground">contacto@itsoeh.edu.mx</span>
+                <span className="text-muted-foreground">itsoehdifusion@itsoeh.edu.mx</span>
               </li>
             </ul>
           </div>
