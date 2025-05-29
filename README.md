@@ -55,14 +55,26 @@ Sigue estos pasos para instalar y ejecutar el proyecto localmente:
 
 1. **Descarga el repositorio** o el archivo del proyecto.
 
-2. **Instala las dependencias**
-   1. Usa el comando:
-   ```bash
-   pnpm i
-   2. Despues el comando:
-   ```bash
-   pnpm dev
-   3. Accede al link localhost:3000
+2. **Instala las dependencias y ejecuta el proyecto**:
+
+   * Usa el siguiente comando para instalar las dependencias:
+
+     ```bash
+     pnpm i
+     ```
+
+   * Luego, ejecuta el servidor de desarrollo:
+
+     ```bash
+     pnpm dev
+     ```
+
+   * Finalmente, abre tu navegador y accede a:
+
+     ```
+     http://localhost:3000
+     ```
+
 
 
 ### Requisitos Previos
