@@ -2,6 +2,9 @@
 
 > Plataforma digital moderna y responsiva para la carrera de Ingeniería en Tecnologías de la Información y Comunicaciones del Instituto Tecnológico Superior del Occidente del Estado de Hidalgo.
 
+ ## ✨ Link de Vercel
+https://tics-page-6a-ux-estudiantes.vercel.app/
+
 ## ✨ Características Principales
 
 Este portal estudiantil ha sido diseñado pensando en las necesidades específicas de los estudiantes universitarios de la carrera de Ingeniería en TICs, con un enfoque en la experiencia de usuario y la accesibilidad móvil.
@@ -86,4 +89,4 @@ Sigue estos pasos para instalar y ejecutar el proyecto localmente:
 
 ![Página Estudiantes](Estudiantes.png)
 
-  ## ✨ Link de Vercel
+ 
