@@ -1,6 +1,4 @@
-# 🎓 Portal Estudiantil ITSOEH - Ingeniería en TIC
-
-![Banner ITSOEH](https://via.placeholder.com/1200x300/0066cc/ffffff?text=Portal+Estudiantil+ITSOEH)
+# 🎓 Portal Estudiantil ITSOEH - Ingeniería en Tecnologías de la Información y Comunicaciones.
 
 > Plataforma digital moderna y responsiva para la carrera de Ingeniería en Tecnologías de la Información y Comunicaciones del Instituto Tecnológico Superior del Occidente del Estado de Hidalgo.
 
